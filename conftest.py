@@ -20,7 +20,8 @@ def browser(request):
         submit_language_button = browser.find_element(By.CSS_SELECTOR, "#language_selector .btn-default")
         submit_language_button.click()
     else:
-        raise pytest.UsageError("--language incorrect")
+        raise pytest.UsageError("--language language not supported")
+
     yield browser
-    print("\nquit browser..")
+    print("\nQuit browser..")
     browser.quit()
